@@ -1,6 +1,6 @@
 {
-    "name" : "component-tsc-example",
-    "description" : "example component using component-tsc",
+    "name" : "component-builder-typescript-example",
+    "description" : "example component using component-builder-typescript",
     "dependencies" : {
         "jhc-systems/angular": "1.2.21"
     },
@@ -10,7 +10,8 @@
     "main" : "example/example.ts",
     "scripts" : [
         "example/example.ts",
-        "example/example-service.ts"  
+        "example/example-service.ts",
+        "example/example-types.d.ts"  
     ],
     "styles" : [
         

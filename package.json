@@ -1,9 +1,18 @@
 {
   "name": "component-builder-typescript",
-  "version": "0.2.1",
+  "version": "0.4.1",
   "description": "TypeScript compiler for component",
   "directories": {},
   "main": "lib/plugin.js",
+  "homepage": "https://github.com/frankwallis/component-builder-typescript",
+  "author": {
+    "name": "Frank Wallis",
+    "email": "fwallis@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankwallis/component-builder-typescript.git"
+  },
   "dependencies": {
     "async": "^0.9.0",
     "component-consoler": "^2.0.0",
@@ -21,7 +30,7 @@
     "gulp-util": "^3.0.1"
   },
   "scripts": {
-    "test": "node lib/test.js"
+
   },
   "bin": {},
   "author": "Frank Wallis",

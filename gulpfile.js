@@ -16,7 +16,25 @@ gulp.task('scripts', function () {
             gutil.log("Error " + err.message);
         })
         .pipe(gulp.dest('build'));
-})
+});
+
+gulp.task('specs', function () {
+    var component = require('gulp-component-builder');
+    var builder = require('component-builder');
+    var typescript = require('./');
+    var rename = require('gulp-rename');
+
+    return gulp.src('component.json')
+        .pipe(component.scripts({ development: false }, function(scripts, option) {
+            scripts.use('specs', typescript(), builder.plugins.js());
+        }))
+        .on('error', function(err) {
+            gutil.log("Error " + err.message);
+        })
+        .pipe(rename('build-specs'))
+        //.pipe(concat(require all specs))
+        .pipe(gulp.dest('build'));
+});
 
 gulp.task('files', function () {
     var component = require('gulp-component-builder');
@@ -27,7 +45,7 @@ gulp.task('files', function () {
             gutil.log("Error " + err.message);
         })
         .pipe(gulp.dest('build'))
-})
+});
 
 gulp.task('styles', function () {
     var builder = require('component-builder');
