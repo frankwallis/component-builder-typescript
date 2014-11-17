@@ -4,11 +4,3 @@ declare module 'component-tsc-example' {
     export var Module: ng.IModule;
 }
 
-declare var require: any;
-
-declare module example {
-	interface IGreeterService {
-		greet(name: string);
-	}
-}
-

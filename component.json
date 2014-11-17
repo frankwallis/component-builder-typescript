@@ -7,10 +7,10 @@
     "local": [
    
     ],
-    "main" : "example/example.js",
+    "main" : "example/example.ts",
     "scripts" : [
-        "example/example.js",
-        "example/exampleService.js"  
+        "example/example.ts",
+        "example/example-service.ts"  
     ],
     "styles" : [
         
