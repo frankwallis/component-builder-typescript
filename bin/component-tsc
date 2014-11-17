@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+var program = require('commander');
+var compile = require('../lib/index.js');
+var version = require('../package.json').version;
+
+program
+  .version(version)
+  .usage('[options]')
+  .option("-i, --install", "install dependencies")
+  .parse(process.argv)
+
+compile(program);

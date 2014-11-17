@@ -1,0 +1,21 @@
+{
+    "name" : "component-tsc-example",
+    "description" : "example component using component-tsc",
+    "dependencies" : {
+        "jhc-systems/angular": "1.2.21"
+    },
+    "local": [
+   
+    ],
+    "main" : "example/example.js",
+    "scripts" : [
+        "example/example.js",
+        "example/exampleService.js"  
+    ],
+    "styles" : [
+        
+    ],
+    "typescript": {
+        "definition": "api/example.d.ts"
+    }
+}
