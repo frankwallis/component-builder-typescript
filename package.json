@@ -6,6 +6,7 @@
   "main": "lib/plugin.js",
   "dependencies": {
     "component-consoler": "^2.0.0",
+    "dts-bundle": "^0.2.0",
     "typescript-compiler": "^1.1.0-2"
   },
   "devDependencies": {},
