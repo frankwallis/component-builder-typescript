@@ -8,13 +8,13 @@ gulp.task('scripts', function () {
     
     return gulp.src('component.json')
         .pipe(component.scripts({ development: false }, function(scripts, option) {
-            scripts.use('scripts', typescript(), builder.plugins.js());
+            scripts.use('scripts', typescript());//, builder.plugins.js());
             scripts.use('json', builder.plugins.json());
             scripts.use('templates', builder.plugins.string());
         }))
-        .on('error', function(err) {
-            gutil.log("Error " + err.message);
-        })
+       // .on('error', function(err) {
+         //   gutil.log("Error " + err.message);
+        //})
         .pipe(gulp.dest('build'));
 });
 
