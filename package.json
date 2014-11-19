@@ -1,6 +1,6 @@
 {
   "name": "component-builder-typescript",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "TypeScript compiler for component",
   "directories": {},
   "main": "lib/plugin.js",
@@ -9,6 +9,9 @@
     "name": "Frank Wallis",
     "email": "fwallis@outlook.com"
   },
+  "keywords": [
+    "component", "typescript", "bundle", "visual studio", "plugin"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/frankwallis/component-builder-typescript.git"
