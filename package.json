@@ -1,6 +1,6 @@
 {
   "name": "component-builder-typescript",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "TypeScript compiler for component",
   "directories": {},
   "main": "lib/plugin.js",
@@ -29,6 +29,7 @@
     "component-builder": "^1.1.13",
     "component-builder-sass": "^0.1.1",
     "component-resolve-list": "^0.1.0",
+    "component-resolver": "^1.2.7",
     "debounce": "^1.0.0",
     "gulp": "^3.8.10",
     "gulp-component-builder": "^0.1.2",

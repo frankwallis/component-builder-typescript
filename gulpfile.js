@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var gutil = require("gulp-util");
 
-gulp.task('scripts', function () {
+gulp.task('scripts-gulp', function () {
     var component = require('gulp-component-builder');
     var builder = require('component-builder');
     var typescript = require('./');
@@ -18,32 +18,29 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('files', function () {
-    var component = require('gulp-component-builder');
-    
-    return gulp.src('component.json')
-        .pipe(component.files({ development: false }))
-        .on('error', function(err) {
-            gutil.log("Error " + err.message);
-        })
-        .pipe(gulp.dest('build'))
-});
-
-gulp.task('styles', function () {
+gulp.task('scripts-component', [ 'scripts-gulp' ], function (cb) {
+    var fs = require('fs');
+    var resolve = require('component-resolver');
     var builder = require('component-builder');
-    var autoprefix = require('builder-autoprefixer');
-    
-    var component = require('gulp-component-builder');
-    var sass = require('component-builder-sass');
-    
-    return gulp.src('component.json')
-        .pipe(component.styles({ development: false }, function(styles, option) {
-            styles.use('styles', sass(), builder.plugins.urlRewriter(''), autoprefix());
-        }))
-        .on('error', function(err) {
-            gutil.log("Error " + err.message);
-        })
-        .pipe(gulp.dest('build'));
+    var typescript = require('./');
+  
+    // resolve the dependency tree
+    resolve(process.cwd(), {
+      // install the remote components locally
+      install: true
+    }, function (err, tree) {
+      if (err) throw err;
+
+      // only include `.js` files from components' `.scripts` field
+      builder.scripts(tree)
+        .use('scripts', typescript({ gulp: false }), builder.plugins.js())
+        .use('json', builder.plugins.json())
+        .use('templates', builder.plugins.string())
+        .end(function (err, string) {
+          if (err) throw err;
+          fs.writeFile('build.js', string, cb);
+        });
+    })
 });
 
 gulp.task('watch-scripts', [ 'scripts' ], function () {
@@ -54,22 +51,6 @@ gulp.task('watch-scripts', [ 'scripts' ], function () {
     });
 });
 
-gulp.task('watch-styles', [ 'styles' ], function () {
-    var resolve = require("component-resolve-list");
-    
-    resolve.styles(function(filelist) {
-        gulp.watch(filelist, { read: false, debounceDelay: 500 }, [ 'styles' ]);
-    });
-});
-
-gulp.task('watch-files', [ 'files' ], function () {
-    var resolve = require("component-resolve-list");
-    
-    resolve.files(function(filelist) {
-        gulp.watch(filelist, { read: false, debounceDelay: 500 }, [ 'files' ]);
-    });
-});
-
-gulp.task('build', ['scripts', 'styles', 'files']);
-gulp.task('watch', ['watch-scripts', 'watch-styles', 'watch-files']);
-gulp.task('default', ['build']);
+gulp.task('scripts', ['scripts-component', 'scripts-gulp']);
+gulp.task('watch', ['watch-scripts']);
+gulp.task('default', ['scripts']);
