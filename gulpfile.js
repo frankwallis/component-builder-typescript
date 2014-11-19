@@ -8,31 +8,13 @@ gulp.task('scripts', function () {
     
     return gulp.src('component.json')
         .pipe(component.scripts({ development: false }, function(scripts, option) {
-            scripts.use('scripts', typescript());//, builder.plugins.js());
+            scripts.use('scripts', typescript({ gulp: true }), builder.plugins.js());
             scripts.use('json', builder.plugins.json());
             scripts.use('templates', builder.plugins.string());
         }))
-       // .on('error', function(err) {
-         //   gutil.log("Error " + err.message);
-        //})
-        .pipe(gulp.dest('build'));
-});
-
-gulp.task('specs', function () {
-    var component = require('gulp-component-builder');
-    var builder = require('component-builder');
-    var typescript = require('./');
-    var rename = require('gulp-rename');
-
-    return gulp.src('component.json')
-        .pipe(component.scripts({ development: false }, function(scripts, option) {
-            scripts.use('specs', typescript(), builder.plugins.js());
-        }))
         .on('error', function(err) {
-            gutil.log("Error " + err.message);
+           gutil.log("Error " + err.message);
         })
-        .pipe(rename('build-specs'))
-        //.pipe(concat(require all specs))
         .pipe(gulp.dest('build'));
 });
 

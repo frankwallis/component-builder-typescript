@@ -1,16 +1,17 @@
 {
   "name": "component-builder-typescript",
-  "version": "0.4.2",
+  "version": "0.9.1",
   "description": "TypeScript compiler for component",
   "directories": {},
   "main": "lib/plugin.js",
   "homepage": "https://github.com/frankwallis/component-builder-typescript",
-  "author": {
-    "name": "Frank Wallis",
-    "email": "fwallis@outlook.com"
-  },
+  "author": "Frank Wallis",
   "keywords": [
-    "component", "typescript", "bundle", "visual studio", "plugin"
+    "component",
+    "typescript",
+    "bundle",
+    "visual studio",
+    "plugin"
   ],
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "async": "^0.9.0",
     "component-consoler": "^2.0.0",
     "dts-bundle": "^0.2.0",
+    "gulp-util": "^3.0.1",
     "typescript-compiler": "^1.1.0-2"
   },
   "devDependencies": {
@@ -32,10 +34,7 @@
     "gulp-component-builder": "^0.1.2",
     "gulp-util": "^3.0.1"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "bin": {},
-  "author": "Frank Wallis",
   "license": "MIT"
 }
