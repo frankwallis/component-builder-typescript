@@ -38,7 +38,7 @@ gulp.task('scripts-component', [ 'scripts-gulp' ], function (cb) {
         .use('templates', builder.plugins.string())
         .end(function (err, string) {
           if (err) throw err;
-          fs.writeFile('build.js', string, cb);
+          fs.writeFile('build/build_1.js', string, cb);
         });
     })
 });
