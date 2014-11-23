@@ -1,6 +1,6 @@
 {
   "name": "component-builder-typescript",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "TypeScript compiler for component",
   "directories": {},
   "main": "lib/plugin.js",
@@ -22,6 +22,7 @@
     "component-consoler": "^2.0.0",
     "dts-bundle": "^0.2.0",
     "gulp-util": "^3.0.1",
+    "prepend-file": "^0.2.0",
     "typescript-compiler": "^1.1.0-2"
   },
   "devDependencies": {
