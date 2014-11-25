@@ -10,7 +10,9 @@ gulp.task('scripts-gulp', function () {
         .pipe(component.scripts({ development: false }, function(scripts, option) {
             scripts.use('scripts', typescript({ 'gulpMode': true }), builder.plugins.js());
             scripts.use('json', builder.plugins.json());
-            scripts.use('files', function(file, done) { done(); });
+            // NEEDED FOR COMPONENT-BUILDER-TYPESCRIPT (EXTERNAL DECLARATIONS)
+            scripts.use('files', function(file, done) { return done(); })
+            //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
             scripts.use('templates', builder.plugins.string());
         }))
         .on('error', function(err) {
