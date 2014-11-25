@@ -20,6 +20,8 @@
   "dependencies": {
     "async": "^0.9.0",
     "component-consoler": "^2.0.0",
+    "component-flatten": "^1.0.1",
+    "convert-source-map": "^0.4.1",
     "dts-bundle": "^0.2.0",
     "gulp-util": "^3.0.1",
     "prepend-file": "^0.2.0",
