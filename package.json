@@ -5,7 +5,10 @@
   "directories": {},
   "main": "lib/plugin.js",
   "homepage": "https://github.com/frankwallis/component-builder-typescript",
-  "author": "Frank Wallis",
+  "authors": [
+    "Frank Wallis",
+    "Greg Smith"
+  ],
   "keywords": [
     "component",
     "typescript",
