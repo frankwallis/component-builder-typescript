@@ -39,6 +39,9 @@ gulp.task('scripts-component', [ 'scripts-gulp' ], function (cb) {
         .use('scripts', typescript({ gulp: false }), builder.plugins.js())
         .use('json', builder.plugins.json())
         .use('templates', builder.plugins.string())
+        // NEEDED FOR COMPONENT-BUILDER-TYPESCRIPT (EXTERNAL DECLARATIONS)
+        .use('files', function(file, done) { return done(); })
+        //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
         .end(function (err, string) {
           if (err) throw err;
           fs.writeFile('build/build_1.js', string, cb);
