@@ -13,7 +13,7 @@ component-builder-typescript uses this information to minimise the number of fil
 and compiled which produces a highly optimised build.
 
 when used in a watch task component-builder-typescript performs incremental builds, 
-only compiling the components which have changed and their dependencies.
+only compiling components which have changed and their dependents.
 
 component-builder-typescript  will generate an external definition file for your component
 (using dts-bundle) which can be used by your IDE or distributed with JavaScript.
