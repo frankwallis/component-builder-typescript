@@ -31,7 +31,6 @@ Name         			| Description												| Default
 generateDeclarations	| generate an external declaration file for the component 	| true
 generateSourceMaps		| generate inline source maps in the generated code 		| true
 gulpMode				| use gulp-style logging									| false
-
 noImplicitAny			| typescript compiler option 								| false
 removeComments			| typescrpt compiler option							 		| false
 target					| typescrpt compiler option									| es5
@@ -67,10 +66,6 @@ you can specify the location of the generated external definition file like this
     ]
 }
 ```
-
-# Caveats #
-
-
 
 # Credits #
 
