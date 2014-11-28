@@ -1,7 +1,7 @@
 component-builder-typescript
 ============================
 
-typescript plugin for component
+typescript compiler plugin for component
 
 # Overview #
 
@@ -70,4 +70,5 @@ you can specify the location of the generated external definition file like this
 # Credits #
 
 Greg Smith [Tsify](https://github.com/smrq/tsify)
+Bart van der Schoor [dts-bundle](https://github.com/TypeStrong/dts-bundle)
 
