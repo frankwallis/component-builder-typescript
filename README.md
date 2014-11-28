@@ -26,14 +26,16 @@ componentBuilderTypescript(options);
 
 options:
 
-Name         			| Description												| Default
-------------------------|-----------------------------------------------------------|-----------
-generateDeclarations	| generate an external declaration file for the component 	| true
-generateSourceMaps		| generate inline source maps in the generated code 		| true
-gulpMode				| use gulp-style logging									| false
-noImplicitAny			| typescript compiler option 								| false
-removeComments			| typescrpt compiler option							 		| false
-target					| typescrpt compiler option									| es5
+Name       		   | Description											| Default
+-------------------|--------------------------------------------------------|-----------
+declaration	       | generate an external declaration file                  | true
+sourceMap		   | generate source maps for component-builder             | false
+inlineSourceMap    | generate inline source maps in the generated code      | false
+gulpMode           | use gulp-style logging									| false
+ignoreRemoteFilesRx| ignore remote source files matching this regex         | 
+noImplicitAny      | typescript compiler option 							| false
+removeComments	   | typescrpt compiler option							 	| false
+target			   | typescript compiler option								| es5
 
 # component.json #
 
