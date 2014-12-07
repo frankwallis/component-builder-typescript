@@ -28,6 +28,7 @@ options:
 
 Name       		   | Description											| Default
 -------------------|--------------------------------------------------------|-----------
+fields             | fields to use                                          | ['scripts'] 
 declaration	       | generate an external declaration file                  | true
 sourceMap		   | generate source maps for component-builder             | false
 inlineSourceMap    | generate inline source maps in the generated code      | false
@@ -40,10 +41,8 @@ target			   | typescript compiler option								| es5
 # component.json #
 
 ## fields ##
-when building component-builder-typescript will import declaration files from both 
-the 'scripts' and 'files' fields of your component.json. If you are using the 'files'
-field (for exporting definitions from a javascript project perhaps) then you need to 
-remember to include the 'files' field in your build.
+by default component-builder-typescript will use typescript files found in 
+the 'scripts' field of your component.json, but you can override this using the 'fields' property of the configuration options.
 
 ## exported declarations ##
 declaration files are generated for local components and components which have been linked using
@@ -62,6 +61,7 @@ you can specify the location of the generated external definition file like this
     },
     "main" : "example/example.ts",
     "scripts" : [
+        "exports/component-builder-typescript-example.d.ts",
         "example/_dependencies.d.ts",
         "example/example.ts",
         "example/example-types.d.ts"  

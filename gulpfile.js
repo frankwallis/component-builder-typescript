@@ -10,9 +10,6 @@ gulp.task('scripts-gulp', function () {
         .pipe(component.scripts({ development: false }, function(scripts, option) {
             scripts.use('scripts', typescript({ 'gulpMode': true }), builder.plugins.js());
             scripts.use('json', builder.plugins.json());
-            // NEEDED FOR COMPONENT-BUILDER-TYPESCRIPT (EXTERNAL DECLARATIONS)
-            scripts.use('files', function(file, done) { return done(); })
-            //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
             scripts.use('templates', builder.plugins.string());
         }))
         .on('error', function(err) {
@@ -39,9 +36,6 @@ gulp.task('scripts-component', [ 'scripts-gulp' ], function (cb) {
         .use('scripts', typescript({ gulp: false }), builder.plugins.js())
         .use('json', builder.plugins.json())
         .use('templates', builder.plugins.string())
-        // NEEDED FOR COMPONENT-BUILDER-TYPESCRIPT (EXTERNAL DECLARATIONS)
-        .use('files', function(file, done) { return done(); })
-        //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
         .end(function (err, string) {
           if (err) throw err;
           fs.writeFile('build/build_1.js', string, cb);
