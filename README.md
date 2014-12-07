@@ -34,6 +34,7 @@ sourceMap		   | generate source maps for component-builder             | false
 inlineSourceMap    | generate inline source maps in the generated code      | false
 gulpMode           | use gulp-style logging									| false
 ignoreRemoteFilesRx| ignore remote source files matching this regex         | 
+strict             | when false all declaration files will be incuded       | true
 noImplicitAny      | typescript compiler option 							| false
 removeComments	   | typescrpt compiler option							 	| false
 target			   | typescript compiler option								| es5
