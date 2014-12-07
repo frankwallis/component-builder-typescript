@@ -2,5 +2,3 @@
 
 /// local definitons
 /// <reference path="./example-types.d.ts" />
-
-declare var require: any;

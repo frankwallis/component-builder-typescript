@@ -9,6 +9,7 @@
     ],
     "main" : "example/example.ts",
     "scripts" : [
+        "api/example.d.ts",
         "example/_references.d.ts",
         "example/_dependencies.d.ts",
         "example/example.ts",
