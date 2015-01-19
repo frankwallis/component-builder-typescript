@@ -5,7 +5,6 @@
 //		greet(name: string);
 //	}
 //}
-
 class Greeter implements example.IGreeterService {
     greeting: string;
     constructor(message: string) {

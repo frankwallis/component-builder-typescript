@@ -18,7 +18,7 @@ only compiling components which have changed and their dependents.
 component-builder-typescript  will generate an external definition file for your component
 (using dts-bundle) which can be used by your IDE or distributed with JavaScript.
 
-component-builder-typescript uses version 1.3 of the typescript compiler
+component-builder-typescript uses version 1.4 of the typescript compiler
 
 # API #
 
@@ -29,6 +29,7 @@ options:
 Name       		   | Description											| Default
 -------------------|--------------------------------------------------------|-----------
 fields             | fields to use                                          | ['scripts'] 
+declareRequire     | include a commonjs require declaration                 | true
 declaration	       | generate an external declaration file                  | true
 sourceMap		   | generate source maps for component-builder             | false
 inlineSourceMap    | generate inline source maps in the generated code      | false
@@ -37,7 +38,6 @@ ignoreRemoteFilesRx| ignore remote source files matching this regex         |
 strict             | when false all declaration files will be incuded       | true
 noImplicitAny      | typescript compiler option 							| false
 removeComments	   | typescrpt compiler option							 	| false
-target			   | typescript compiler option								| es5
 
 # component.json #
 
