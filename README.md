@@ -6,8 +6,7 @@ typescript compiler plugin for component
 # Overview #
 
 one of the best things about component is having access to every file required to
-build your application. the other best thing about component is having access to the
-dependency tree. 
+build your application before the build starts. the other best thing about component is having access to the dependency tree. 
 
 component-builder-typescript uses this information to minimise the number of files read
 and compiled which produces a highly optimised build.
@@ -29,7 +28,7 @@ options:
 Name       		   | Description											| Default
 -------------------|--------------------------------------------------------|-----------
 fields             | fields to use                                          | ['scripts'] 
-declareRequire     | include a commonjs require declaration                 | true
+declareRequire     | include a commonjs require declaration                 | false
 declaration	       | generate an external declaration file                  | true
 sourceMap		   | generate source maps for component-builder             | false
 inlineSourceMap    | generate inline source maps in the generated code      | false
